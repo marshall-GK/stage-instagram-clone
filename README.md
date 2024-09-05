@@ -32,4 +32,4 @@ Toggle Device toolbar and selected any mobile device.
 - Pre-push hook used for executing test cases before a push. 
 - Github actions used to run test cases if PR is raised to main branch.
 - Vercel is used to deploy this project.
-- Backend deployed on Render.
+- Backend deployed on Render, it's free server there might be a delay in response like 40 secs.
