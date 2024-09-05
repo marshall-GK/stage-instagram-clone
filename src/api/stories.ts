@@ -7,8 +7,8 @@ type ApiResponse = {
   status: number;
 };
 
-// const baseUrl = "https://stage-instagram-clone-api.onrender.com";
-const baseUrl = "http://localhost:5000";
+const baseUrl = "https://stage-instagram-clone-api.onrender.com";
+// const baseUrl = "http://localhost:5000";
 
 
 export const getStories = async (): Promise<ApiResponse> => {
