@@ -7,13 +7,13 @@ import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RouterEndpoint } from "@/routers";
 import { detectAppMobileUserAgent } from "@/_common/utils";
-import { UserStoryContextDispatch } from "@/Contexts/UserStoryContext";
+import { UserStoryContext, UserStoryContextDispatch } from "@/Contexts/UserStoryContext";
 import { ReducerActionType } from "@/Reducers/actions";
 
 export default function Home() {
   const router = useRouter();
   const userStoryDispatch = useContext(UserStoryContextDispatch);
-
+    
   useEffect(() => {
     const isMobileDevice = detectAppMobileUserAgent()
     if (!isMobileDevice) {

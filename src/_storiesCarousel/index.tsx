@@ -4,7 +4,7 @@ import Image from "next/image";
 import Avatar from "@/_avatar";
 import styles from "@/_storiesCarousel/page.module.css";
 // import { statusCarousel } from "@/FakeData/data";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   UserStoryContext,
   UserStoryContextDispatch,
@@ -20,9 +20,11 @@ const Carousel = () => {
   const userStoryDispatch = useContext(UserStoryContextDispatch);
   const { currentAvatarMetaData, userStoriesList } =
     useContext(UserStoryContext);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true);
       const response = await getStories();
       if (response.status === 200) {
         userStoryDispatch({
@@ -32,6 +34,7 @@ const Carousel = () => {
       } else {
         alert("Something went wrong, please try again later");
       }
+      setLoading(false);
     }
     fetchData();
   }, []);
@@ -56,18 +59,22 @@ const Carousel = () => {
 
   return (
     <section className={styles.check}>
-      <div className={styles.carouselBody}>
-        {(userStoriesList || []).map((item: any, index: number) => {
-          return (
-            <Avatar
-              key={item.id}
-              image={item}
-              isName={true}
-              onClick={() => handleAvatarStoryClick(item)}
-            />
-          );
-        })}
-      </div>
+      {!loading ? (
+        <div className={styles.carouselBody}>
+          {(userStoriesList || []).map((item: any, index: number) => {
+            return (
+              <Avatar
+                key={item.id}
+                image={item}
+                isName={true}
+                onClick={() => handleAvatarStoryClick(item)}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <div className="loader" style={{ top: "calc(50vh - 60px)" }}></div>
+      )}
     </section>
   );
 };
