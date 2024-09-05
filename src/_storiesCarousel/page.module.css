@@ -1,0 +1,49 @@
+.carouselStatus {
+  padding: 16px 0px;
+}
+.carouselBody {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  /* overflow-y: none; */
+  height: 119px;
+  background-color: rgb(var(--ig-primary-background));
+  border-radius: 8px;
+  position: relative;
+  scroll-behavior: smooth;
+  padding-top: 20px;
+  padding-right: 20px;
+  column-gap: 20px;
+  padding-left: 20px;
+}
+.carouselBody::-webkit-scrollbar {
+  display: none;
+}
+.check {
+  position: relative;
+}
+.arrowBtn {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  z-index: 999;
+  cursor: pointer;
+}
+.arrowBtn img {
+  width: 10px;
+  height: 10px;
+}
+.leftIcon {
+  left: 10px;
+  top: 40px;
+}
+.rightIcon {
+  right: 10px;
+  top: 40px;
+}
