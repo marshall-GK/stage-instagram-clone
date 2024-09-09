@@ -1,4 +1,7 @@
-## Getting Started
+### LIVE PREVIEW 
+Open [https://stage-instagram-clone.onrender.com/](https://stage-instagram-clone.onrender.com/) to view.
+
+## Getting Started on local
 
 First, install dependencies:
 
@@ -32,6 +35,6 @@ Toggle Device toolbar and selected any mobile device.
 - Pre-push hook used for executing test cases before a push. 
 - Github actions used to run test cases if PR is raised to main branch.
 - Vercel is used to deploy this project.
-- Backend deployed on Render, it's free server there might be a delay in response like 40 secs.
+- Backend and Frontend deployed on Render, it's free server there might be a delay in response like 40 secs.
 - Used minimum Typescript type definations, due to time limitation.
 - Completed project in a day. 
